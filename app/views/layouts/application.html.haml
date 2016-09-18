@@ -6,6 +6,32 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true 
     = csrf_meta_tags 
   %body
+    %nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          %ul.nav
+            %li.active
+              %a.navbar-brand{:href => "#"} Home
+        .collapse.navbar-collapse#bs-example-navbar-collapse-1
+          %ul.nav.navbar-nav
+            %li
+              %a Link
+            %li.dropdown
+              %a.dropdown-toggle{:href => "#", "role" => "button", "data-toggle" => "dropdown"} 
+                Produkty
+                %b.caret
+              %ul.dropdown-menu{"role" => "menu"}
+                %li
+                  %a
+                    =link_to "Nowy", new_product_path
+                  %a{:href => "#link2"} 
+                    Dropdown #2
+                  %a{:href => "#link3"} 
+                    Dropdown #3
+                  %a{:href => "#link4"} 
+                    Dropdown #4
+                %li
+                  %a{:href => "#contact"} Contact
     %h1 Sklep u Bartka
     = yield
     %h3 Stopka

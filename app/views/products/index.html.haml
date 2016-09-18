@@ -1,9 +1,18 @@
 %h1 Products#index
-%table{:border => "1px solid black"}
-  %tr
-    %td Nazwa Produktu
-    %td Cena
-  -@products.each do |t|
+.table-responsive
+  %table.table.table-bordered
     %tr
-    %td= t.name
-    %td= t.price
+      %td #
+      %td Nazwa Produktu
+      %td Cena
+      %td Opis
+      %td Promocja?
+      %td Zdjęcie
+    -@products.each do |t|
+      %tr
+      %td= t.id
+      %td= t.name
+      %td= t.price
+      %td= t.description
+      %td= t.sale
+      %td= t.picture
