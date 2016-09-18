@@ -1,0 +1,9 @@
+%h1 Products#index
+%table{:border => "1px solid black"}
+  %tr
+    %td Nazwa Produktu
+    %td Cena
+  -@products.each do |t|
+    %tr
+    %td= t.name
+    %td= t.price
