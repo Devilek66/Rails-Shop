@@ -1,0 +1,6 @@
+%h1 Products#show
+%p= @product.name
+%p= number_to_currency(@product.price, unit: 'zł', precision: 2, format: "%n %u")
+%p= @product.description
+%p= @product.sale
+%p= @product.picture

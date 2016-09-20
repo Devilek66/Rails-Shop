@@ -1,2 +1,24 @@
-%h1 Products#edit
-%p Find me in app/views/products/edit.html.erb
+%h3 Product#edit
+= form_for @product do |f|
+  = f.label :name , "Nazwa"
+  = f.text_field :name
+  %br
+  = f.label :price , "Cena"
+  = f.text_field :price
+  %br
+  = f.label :description , "Opis"
+  = f.text_field :description
+  %br
+  = f.label :sale, "Promocja?"
+  %br
+  Tak
+  =f.radio_button :sale, 1
+  %br
+  Nie
+  =f.radio_button :sale, 0
+  %br
+  = f.label :picture , "Wygląd"
+  = f.text_field :picture
+  %br
+  = f.submit "Zaktualizuj produkt"
+

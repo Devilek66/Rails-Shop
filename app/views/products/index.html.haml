@@ -1,4 +1,4 @@
-%h1 Products#index
+%h3 Products#index
 .table-responsive
   %table.table.table-bordered
     %tr
@@ -8,11 +8,15 @@
       %td Opis
       %td Promocja?
       %td Zdjęcie
-    -@products.each do |t|
+      %td Akcja
+    -@products.each do |product|
       %tr
-      %td= t.id
-      %td= t.name
-      %td= t.price
-      %td= t.description
-      %td= t.sale
-      %td= t.picture
+      %td= product.id
+      %td= product.name
+      %td= number_to_currency(product.price, unit: 'zł', precision: 2, format: "%n %u")
+      %td= product.description
+      %td= product.sale
+      %td= product.picture
+      %td 
+        .btn.btn-primary.btn-xs= link_to "Edytuj", edit_product_path(product)
+        .btn.btn-default.btn-xs= link_to "Pokaż", product_path(product)
