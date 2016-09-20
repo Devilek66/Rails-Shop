@@ -1,6 +1,6 @@
 %h3 Products#index
-.table-responsive
-  %table.table.table-bordered
+%table.table.table-striped
+  %thead
     %tr
       %td #
       %td Nazwa Produktu
@@ -9,6 +9,7 @@
       %td Promocja?
       %td Zdjęcie
       %td Akcja
+  %tbody
     -@products.each do |product|
       %tr
       %td= product.id
@@ -18,5 +19,5 @@
       %td= product.sale
       %td= product.picture
       %td 
-        .btn.btn-primary.btn-xs= link_to "Edytuj", edit_product_path(product)
-        .btn.btn-default.btn-xs= link_to "Pokaż", product_path(product)
+        = link_to "Edytuj", edit_product_path(product), class: "btn btn-primary btn-xs"
+        = link_to "Pokaż", product_path(product), class: " btn btn-default btn-xs"
